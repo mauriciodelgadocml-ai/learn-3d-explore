@@ -9,8 +9,11 @@ interface Scene3DProps {
 
 const Scene3D = ({ children, cameraPosition = [0, 0, 5] }: Scene3DProps) => {
   return (
-    <div className="w-full h-full rounded-lg overflow-hidden bg-gradient-to-br from-background to-muted shadow-[var(--shadow-medium)]">
-      <Canvas>
+    <div className="w-full h-full rounded-lg overflow-hidden bg-gradient-to-br from-background to-muted shadow-[var(--shadow-medium)]" style={{ touchAction: 'none' }}>
+      <Canvas
+        gl={{ preserveDrawingBuffer: true }}
+        touch-action="none"
+      >
         <PerspectiveCamera makeDefault position={cameraPosition} />
         <OrbitControls 
           enablePan={true} 
@@ -18,6 +21,15 @@ const Scene3D = ({ children, cameraPosition = [0, 0, 5] }: Scene3DProps) => {
           enableRotate={true}
           minDistance={2}
           maxDistance={10}
+          touches={{
+            ONE: 2,
+            TWO: 0
+          }}
+          mouseButtons={{
+            LEFT: 2,
+            MIDDLE: 1,
+            RIGHT: 0
+          }}
         />
         <ambientLight intensity={0.6} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
