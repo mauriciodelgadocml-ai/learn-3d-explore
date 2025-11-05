@@ -15,7 +15,7 @@ const GlobeModel = () => {
 
   return (
     <group ref={groupRef}>
-      <primitive object={scene} scale={0.015} />
+      <primitive object={scene} scale={0.007} />
     </group>
   );
 };
