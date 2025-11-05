@@ -64,7 +64,7 @@ const Index = () => {
               title="Planet Earth"
               description="Discover our planet and its features"
               scene={
-                <Scene3D cameraPosition={[0, 0, 8]}>
+                <Scene3D cameraPosition={[0, 0, 15]}>
                   <GlobeModel />
                 </Scene3D>
               }
