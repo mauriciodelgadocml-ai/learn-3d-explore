@@ -51,7 +51,7 @@ const Index = () => {
               title="Human Skeleton"
               description="Explore the structure of the human skeletal system"
               scene={
-                <Scene3D cameraPosition={[0, 0, 5]}>
+                <Scene3D cameraPosition={[0, 1, 8]}>
                   <SkeletonModel />
                 </Scene3D>
               }
@@ -64,7 +64,7 @@ const Index = () => {
               title="Planet Earth"
               description="Discover our planet and its features"
               scene={
-                <Scene3D cameraPosition={[0, 0, 4]}>
+                <Scene3D cameraPosition={[0, 0, 8]}>
                   <GlobeModel />
                 </Scene3D>
               }

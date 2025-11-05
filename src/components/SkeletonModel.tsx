@@ -15,7 +15,7 @@ const SkeletonModel = () => {
 
   return (
     <group ref={groupRef}>
-      <primitive object={scene} scale={1} />
+      <primitive object={scene} scale={0.03} position={[0, -1, 0]} />
     </group>
   );
 };
