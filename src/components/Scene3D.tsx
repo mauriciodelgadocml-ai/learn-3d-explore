@@ -12,7 +12,7 @@ const Scene3D = ({ children, cameraPosition = [0, 0, 5] }: Scene3DProps) => {
     <div className="w-full h-full rounded-lg overflow-hidden bg-gradient-to-br from-background to-muted shadow-[var(--shadow-medium)]">
       <Canvas
         gl={{ preserveDrawingBuffer: true }}
-        dpr={[1, 2]} // Better performance for mobile
+        dpr={[1, 2]}
         camera={{ position: cameraPosition, fov: 50 }}
       >
         <PerspectiveCamera makeDefault position={cameraPosition} />
@@ -22,20 +22,22 @@ const Scene3D = ({ children, cameraPosition = [0, 0, 5] }: Scene3DProps) => {
           enableRotate={true}
           minDistance={1.5}
           maxDistance={15}
-          // Better touch controls for mobile/webview
+          // Mobile-friendly touch configuration
           touches={{
-            ONE: 1, // 1 = ROTATE (single finger)
-            TWO: 2, // 2 = DOLLY_PAN (two fingers for zoom/pan)
+            ONE: 0, // 0 = ROTATE (single finger rotates - most intuitive)
+            TWO: 3, // 3 = DOLLY_PAN (two fingers for zoom + pan)
           }}
           mouseButtons={{
             LEFT: 0, // 0 = ROTATE
-            MIDDLE: 1, // 1 = ZOOM
+            MIDDLE: 1, // 1 = ZOOM  
             RIGHT: 2, // 2 = PAN
           }}
-          // Additional mobile-friendly settings
-          panSpeed={0.5}
+          // Optimized for mobile
+          panSpeed={0.7}
           rotateSpeed={0.5}
           zoomSpeed={0.8}
+          // Smoothing
+          dampingFactor={0.1}
           // Limits for better UX
           minPolarAngle={0}
           maxPolarAngle={Math.PI}
