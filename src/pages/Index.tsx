@@ -41,9 +41,9 @@ const Index = () => {
 
         <Tabs defaultValue="anatomy" className="w-full">
           <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8">
-            <TabsTrigger value="Anatomy">Anatomía</TabsTrigger>
-            <TabsTrigger value="Geography">Geografía</TabsTrigger>
-            <TabsTrigger value="Geometry">Geometría</TabsTrigger>
+            <TabsTrigger value="anatomy">Anatomía</TabsTrigger>
+            <TabsTrigger value="geography">Geografía</TabsTrigger>
+            <TabsTrigger value="geometry">Geometría</TabsTrigger>
           </TabsList>
 
           <TabsContent value="anatomy" className="animate-in fade-in duration-500">
