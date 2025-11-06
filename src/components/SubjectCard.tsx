@@ -21,7 +21,7 @@ const SubjectCard = ({ title, description, scene, content }: SubjectCardProps) =
             {scene}
           </div>
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-foreground">Learn More</h3>
+            <h3 className="text-xl font-semibold text-foreground">Más información</h3>
             <div className="space-y-3 text-muted-foreground leading-relaxed">
               {content.map((paragraph, index) => (
                 <p key={index} className="text-sm">
